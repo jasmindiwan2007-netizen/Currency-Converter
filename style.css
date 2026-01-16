@@ -1,0 +1,180 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Background */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+ background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  color:whitesmoke;
+  
+  border-radius: 15px;
+  background-color: #2c5364;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  padding: 2px;
+
+  background: linear-gradient(135deg, #7c3aed, #22d3ee);
+
+  /* Standard mask */
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  /* WebKit support (Chrome, Safari, Edge) */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+
+  pointer-events: none;
+}
+
+@keyframes fadeScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+   
+  }
+}
+
+h2 {
+  text-align: center;
+  color: #c9daf3;
+}
+
+/* Form */
+form {
+  margin: 2rem 0 1rem 0;
+}
+
+form select,
+form input,
+form button {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 0.75rem;
+}
+
+/* Input */
+form input {
+  border: 1px solid lightgray;
+  font-size: 1rem;
+  height: 3rem;
+  padding-left: 0.75rem;
+  transition: 0.3s;
+  color: #111827;
+  background-color:white; 
+}
+
+form input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+}
+
+/* Dropdown */
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* Swap Icon */
+.dropdown i {
+  font-size: 1.6rem;
+  color: #e5e7eb;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+    padding:10px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+
+  transition: 0.4s ease;
+}
+
+.dropdown i:hover {
+  transform: rotate(180deg) scale(1.2);
+  color: #4799cf;
+}
+
+/* Select Container */
+.select-container img {
+  width: 6rem;
+  border-radius: 0.5rem;
+  border: 1px solid lightgray;
+  margin-bottom: 5px;
+}
+
+.select-container select {
+  font-size: 1rem;
+  padding: 0.8rem;
+  color: #111827;
+  background-color: #ffffff;
+}
+
+/* Result Text */
+#msg {
+  margin: 2rem 0;
+  text-align: center;
+  font-weight: 500;
+ 
+  animation: fadeUp 0.5s ease;
+  color: #e5e7eb;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button */
+form button {
+  height: 3rem;
+  background: rgb(66, 91, 233);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+form button:hover {
+  box-shadow: 0 10px 25px rgba(58, 139, 177, 0.4);
+  transform: translateY(-2px);
+}
